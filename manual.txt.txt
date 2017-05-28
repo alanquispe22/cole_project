@@ -1,4 +1,8 @@
-Primera configuración
+Primero hagan para entrar al repositorio: 
+$cd repo162
+
+Luego Primera configuración anotan su nombre de 
+usuario y correo
 
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
