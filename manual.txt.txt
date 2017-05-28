@@ -6,3 +6,17 @@ usuario y correo
 
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
+
+para ver la configuracio que hicieron realizen lo siguiente:
+
+$git config --list
+
+
+Para que suban sus archivos
+
+Primero: Crean o copiar de otras carpetas archivos existentes en la carpeta repo163
+luego digitan estos comanmdos en laconsola
+
+$git add *
+$git commit -m "Initial commit"
+$git push -u origin master
