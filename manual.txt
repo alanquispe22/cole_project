@@ -1,0 +1,32 @@
+Lo primero deben clonar el repositorio de la nuebe a sus PCs:
+mejor si lo clonan dentro de la carpeta htdocs de XAMPP para 
+asi poderlo correr desde el navegador
+
+$git clone https:................
+
+ 
+Para entrar al repositorio clonado:
+
+$cd repo162
+
+Luego Primera configuración anotan su nombre de 
+usuario y correo
+
+$ git config --global user.name "suUsuario"
+$ git config --global user.email johndoe@example.com
+
+para ver la configuracio que hicieron realizen lo siguiente:
+
+$git config --list
+
+
+
+
+Para que suban sus archivos
+
+Primero: Crean o copiar de otras carpetas archivos existentes en la carpeta repo163
+luego digitan estos comanmdos en laconsola
+
+$git add *
+$git commit -m "Initial commit"
+$git push -u origin master
