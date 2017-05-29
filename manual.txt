@@ -1,13 +1,8 @@
 Lo primero deben clonar el repositorio de la nuebe a sus PCs:
 mejor si lo clonan dentro de la carpeta htdocs de XAMPP para 
-asi poderlo correr desde el navegador
+asi poderlo correr desde el navegador:
 
 $git clone https:................
-
- 
-Para entrar al repositorio clonado:
-
-$cd repo162
 
 Luego Primera configuración anotan su nombre de 
 usuario y correo
@@ -19,14 +14,18 @@ para ver la configuracio que hicieron realizen lo siguiente:
 
 $git config --list
 
+Para entrar al repositorio clonado:
 
+$cd repo162
 
-
-Para que suban sus archivos
-
-Primero: Crean o copiar de otras carpetas archivos existentes en la carpeta repo163
-luego digitan estos comanmdos en laconsola
+Una vez dentro de la carpeta repo162 lo q pueden hacer es crear nuevos archivos 
+o bien editar archivos ya existentes, cuando hayan terminado de trabajar lo suben
+con los siguientes comandos:
 
 $git add *
-$git commit -m "Initial commit"
+$git commit -m "Lista la Funcion Fibonacci"
 $git push -u origin master
+
+Nota: Si al subir los archivos les sale error es por q quiza no tienen la version mas actualizada del 
+repositorio, es decir deberan descargar los ultimos cambios:
+
