@@ -5,7 +5,7 @@ asi poderlo correr desde el navegador:
 $git clone https:................
 
 Luego Primera configuración anotan su nombre de 
-usuario y correo
+usuario y correo:
 
 $ git config --global user.name "suUsuario"
 $ git config --global user.email johndoe@example.com
@@ -22,10 +22,18 @@ Una vez dentro de la carpeta repo162 lo q pueden hacer es crear nuevos archivos
 o bien editar archivos ya existentes, cuando hayan terminado de trabajar lo suben
 con los siguientes comandos:
 
-$git add *
+$git add * 
 $git commit -m "Lista la Funcion Fibonacci"
 $git push -u origin master
 
-Nota: Si al subir los archivos les sale error es por q quiza no tienen la version mas actualizada del 
-repositorio, es decir deberan descargar los ultimos cambios:
+Nota: Si al subir los archivos les sale error es por q no tienen la version mas actualizada del 
+repositorio, es decir deberan descargar los ultimos cambios con:
 
+$git pull
+
+Lo usaran siempre que quieran descargar los ultimos cambios.
+
+Hay ocasiones en que al hacer git pull nos salen otros errores. 
+
+
+En la imagen q les envie se muestra para q sirve el git add y el git commit utilizados anteriormente.
