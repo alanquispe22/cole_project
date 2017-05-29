@@ -36,4 +36,4 @@ Lo usaran siempre que quieran descargar los ultimos cambios.
 Hay ocasiones en que al hacer git pull nos salen otros errores. 
 
 
-En la imagen q les envie se muestra para q sirve el git add y el git commit utilizados anteriormente.
+En la imagen q les envie se muestra para q sirve el git add y el git commit utilizados anteriormente.:)
