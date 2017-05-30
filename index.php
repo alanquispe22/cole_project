@@ -40,8 +40,23 @@
 				<img src="img/icon-user.png" class="img-responsive" id="avatar">
 			</div>
 		</div>
+		<script type="text/javascript">
+		function enviar(){
+			var formulario = document.getElementById("miform");
+			var email = formulario[0];
+			var pass = formulario[1];
+			if (email.value=="alanquispe23@gmail.com" && pass.value=="123"){
+				alert("Enviando el formulario");
+				formulario.submit();
+				return true;
+			} else {
+				alert("No se envía el formulario");
+				return false;
+			}
+		}
+		</script>
 		<!-- al presionar nos envia al archivo check.php-->
-		<form action="check.php" method="POST" class="login">
+		<form action="check.php" id="miform" method="POST" class="login" onsubmit="return enviar();">
 			<div class="form-group">
 				<!-- tiene auto foco o auto el cursor se situa en este input-->
 				<!-- required significa que cuando este campo este vacio no nos permitira enviarlo-->
@@ -60,7 +75,6 @@
 			</div>
 		</form>
 	</div>
-
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
