@@ -5,6 +5,27 @@
 	<title>Mi Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript">
+
+	//Mauricio: Esta función debe validar que los nombres y password
+	//ingresados son validos ejemplo no se puede ingresar: '!=45 como nombre
+	//esto daria lugar a inyecciones
+	function enviar(){
+		//obtenemos valores de los formularios:
+		var formulario = document.getElementById("miform");
+		var usu = formulario[0].value;
+		var pass = formulario[1].value;
+
+		/*if (usu=="alanquispe23@gmail.com" && pass=="123"){
+			alert("Enviando el formulario");
+			formulario.submit();
+			return true;
+		} else {
+			alert("No se envía el formulario");
+			return false;
+		}*/
+	}
+	</script>
 	<style>
 	body{
 		padding-top: 40px;
@@ -40,38 +61,21 @@
 				<img src="img/icon-user.png" class="img-responsive" id="avatar">
 			</div>
 		</div>
-		<script type="text/javascript">
-		function enviar(){
-			var formulario = document.getElementById("miform");
-			var email = formulario[0];
-			var pass = formulario[1];
-			if (email.value=="alanquispe23@gmail.com" && pass.value=="123"){
-				alert("Enviando el formulario");
-				formulario.submit();
-				return true;
-			} else {
-				alert("No se envía el formulario");
-				return false;
-			}
-		}
-		</script>
 		<!-- al presionar nos envia al archivo check.php-->
-		<form action="check.php" id="miform" method="POST" class="login" onsubmit="return enviar();">
+		<form action="comprueba_login.php" id="miform" method="POST" class="login" onsubmit="return enviar();">
 			<div class="form-group">
 				<!-- tiene auto foco o auto el cursor se situa en este input-->
 				<!-- required significa que cuando este campo este vacio no nos permitira enviarlo-->
-				<input type="email" class="form-control" placeholder="Correo electronico" name="email" required autofocus>
+				<input type="user" class="form-control" placeholder="Usuario" name="usu" required autofocus>
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control" placeholder="Contraseña" name="pass" required>
+				<input type="password" class="form-control" placeholder="Contraseña" name="password" required>
 			</div>
 			<!-- del tipo submit permite enviar la informacion-->
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
 			<div class="checkbox">
 				<p class="help-block"><a href="#">¿No puedes acceder a tu cuenta?</a></p>
-        <p class="help-block"><a href="#">
-          Crear una cuenta nueva</a>
-        </p>
+        <p class="help-block"><a href="#">Crear una cuenta nueva</a></p>
 			</div>
 		</form>
 	</div>
