@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="registra_nuevo_usuario.php" method="post">
+    <fieldset>
+    <legend>Sus Datos personales</legend>
+    <ol>
+      <li>
+        <label>
+            <input type="radio" name="numero" value="profesor">profesor
+        </label>
+        <label>
+            <input type="radio" name="numero" value="padre">padre
+        </label>
+    </ol>
+    <ol>
+    <li>
+      <label>Nombres</label>
+      <input name="nombres" type=text placeholder="Sus nombres" required autofocus>
+    </li>
+    <li>
+    <label >Apellidos</label>
+    <input  name="apellidos" type=text placeholder="Sus apellidos" required>
+    </li>
+    <li>
+    <label>Correo</label>
+    <input name="correo" type=email placeholder="ejemplo@dominio.com" required>
+    </li>
+    <li>
+    <label>Telefono o Celular</label>
+    <input name="telefono"  placeholder="Ej. 78956486" required>
+    </li>
+    </ol>
+    </fieldset>
+    <input type="button" name="name" value="Reset">
+    <button type="submit" name="button">Registrar</button>
+    </form>
+  </body>
+</html>

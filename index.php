@@ -75,7 +75,7 @@
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
 			<div class="checkbox">
 				<p class="help-block"><a href="#">¿No puedes acceder a tu cuenta?</a></p>
-        <p class="help-block"><a href="#">Crear una cuenta nueva</a></p>
+        <p class="help-block"><a href="nueva_cuenta.html">Crear una cuenta nueva</a></p>
 			</div>
 		</form>
 	</div>
