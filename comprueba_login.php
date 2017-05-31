@@ -2,7 +2,8 @@
 /*
 ESTA PAGINA NO MUESTRA NADA LO UNICO QUE HACE ES VERIFICAR SI LOS DATOS INGRESADOS EN EL LOGIN
 SON VALIDOS, PARA ESTO REVISA EN LA BASE DE DATOS.
-DE NO  SER VALIDO MANDA NUEVAMENTE AL index.php DE LO CONTRARIO MANDA A sector_padre.php
+DE NO  SER VALIDO MANDA NUEVAMENTE AL index.php de lo contrario verifica si es padre o profesor
+y dependiendo de eso manda a una pagina.
 */
  ?>
 <!DOCTYPE html>
@@ -30,10 +31,12 @@ DE NO  SER VALIDO MANDA NUEVAMENTE AL index.php DE LO CONTRARIO MANDA A sector_p
       $numero_registro=$resultado->rowCount();
       if($numero_registro!=0)//si el usuario existe
       {
-        //echo "<h2>Adelante</H2>";
         session_start();
         $_SESSION["usuario"]=$_POST["usu"];
-        header("location: sector_padre.php");
+
+        //validamos si es profesor o padre
+
+        //header("location: sector_padre.php");
       }else{
         //le redirigimos a la propia pagina web
         header("location:index.php");

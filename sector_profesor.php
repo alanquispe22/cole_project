@@ -5,8 +5,8 @@
 <title>Pagina de Inicio Profesores</title>
 <meta name="keywords" content="" />
 <meta name="prof" content="" />
-<link href="css/default.css" rel="stylesheet" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/style (2).css">
+<link href="micss/default.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="micss/style (2).css">
 
 <script>
 		function poner(){
@@ -45,7 +45,7 @@
 			            <li>
 			                <div class="comment-main-level">
 			                    <!-- Avatar -->
-			                    <div class="comment-avatar"><img src="images/avatar_1.jpg" alt=""></div>
+			                    <div class="comment-avatar"><img src="img/avatar_1.jpg" alt=""></div>
 			                    <!-- Contenedor del Comentario -->
 			                    <div class="comment-box">
 			                        <div class="comment-head">
@@ -57,12 +57,12 @@
 			                        </div>
 			                    </div>
 			                </div>
-			 
+
 			                <!-- Respuestas de los comentarios -->
 			                <ul class="comments-list reply-list">
 			                    <li>
 			                        <!-- Avatar -->
-			                        <div class="comment-avatar"><img src="images/avatar_2.jpg" alt=""></div>
+			                        <div class="comment-avatar"><img src="img/avatar_2.jpg" alt=""></div>
 			                        <!-- Contenedor del Comentario -->
 			                        <div class="comment-box">
 			                            <div class="comment-head">
@@ -76,11 +76,11 @@
 			                    </li>
 			                </ul>
 			            </li>
-			 
+
 			            <li>
 			                <div class="comment-main-level">
 			                    <!-- Avatar -->
-			                    <div class="comment-avatar"><img src="images/avatar_2.jpg" alt=""></div>
+			                    <div class="comment-avatar"><img src="img/avatar_2.jpg" alt=""></div>
 			                    <!-- Contenedor del Comentario -->
 				                    <div class="comment-box">
 				                        <div class="comment-head">
@@ -95,9 +95,9 @@
 			            </li>
 			        </ul>
 			    </div>
-			
+
 		</div>
 	</div>
-	<div id="sidebar"> <img src="images/colegios.jpg"><img src="images/img_437552.jpg"></div>
+	<div id="sidebar"> <img src="images/colegios.jpg"><img src="img/img_437552.jpg"></div>
 </div>
 </html>
