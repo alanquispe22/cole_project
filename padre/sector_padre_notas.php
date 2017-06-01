@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="micss/style.css" rel="stylesheet" >
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../micss/style.css" rel="stylesheet" >
   </head>
   <body>
     <?php
     session_start();//reanudamos una session si es que la hay
     if(!isset($_SESSION["usuario"])){
       //redirigimos si no existe la session
-      header("location:index.php");
+      header("location:login_padre.php");
     }
      ?>
      <div class="container-fluid">
@@ -26,11 +26,11 @@
  				<li>
  					<a href="sector_padre.php">Inicio</a>
  				</li>
- 				<li >
+ 				<li class="active">
  					<a href="sector_padre_notas.php">Notas</a>
  				</li>
- 				<li class="active">
- 					<a href="sector_padre_comunicados.php">Comunicados</a>
+ 				<li>
+ 					<a href="sector_padre_comunicados.php">Notas</a>
  				</li>
  				<li class="dropdown pull-right">
  					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Ver mas<strong class="caret"></strong></a>
@@ -224,9 +224,9 @@
  	</div>
  </div>
 
-     <script src="js/jquery.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/scripts.js"></script>
+     <script src="../js/jquery.min.js"></script>
+     <script src="../js/bootstrap.min.js"></script>
+     <script src="../js/scripts.js"></script>
 
   </body>
 </html>

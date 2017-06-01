@@ -4,28 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Mi Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script type="text/javascript">
-
-	//Mauricio: Esta función debe validar que los nombres y password
-	//ingresados son validos ejemplo no se puede ingresar: '!=45 como nombre
-	//esto daria lugar a inyecciones
-	function enviar(){
-		//obtenemos valores de los formularios:
-		var formulario = document.getElementById("miform");
-		var usu = formulario[0].value;
-		var pass = formulario[1].value;
-
-		/*if (usu=="alanquispe23@gmail.com" && pass=="123"){
-			alert("Enviando el formulario");
-			formulario.submit();
-			return true;
-		} else {
-			alert("No se envía el formulario");
-			return false;
-		}*/
-	}
-	</script>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<style>
 	body{
 		padding-top: 40px;
@@ -58,11 +37,11 @@
 	<div class="container well" id="sha">
 		<div class="row">
 			<div class="col-xs-12">
-				<img src="img/icon-user.png" class="img-responsive" id="avatar">
+				<img src="../img/icon-user.png" class="img-responsive" id="avatar">
 			</div>
 		</div>
 		<!-- al presionar nos envia al archivo check.php-->
-		<form action="comprueba_login.php" id="miform" method="POST" class="login" onsubmit="return enviar();">
+		<form action="comprueba_login_profesor.php" id="miform" method="POST" class="login">
 			<div class="form-group">
 				<!-- tiene auto foco o auto el cursor se situa en este input-->
 				<!-- required significa que cuando este campo este vacio no nos permitira enviarlo-->
@@ -75,11 +54,11 @@
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
 			<div class="checkbox">
 				<p class="help-block"><a href="#">¿No puedes acceder a tu cuenta?</a></p>
-        <p class="help-block"><a href="nueva_cuenta.html">Crear una cuenta nueva</a></p>
+        <p class="help-block"><a href="registra_profesor.html">Crear una cuenta nueva</a></p>
 			</div>
 		</form>
 	</div>
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <title>Pagina de Inicio Profesores</title>
 <meta name="keywords" content="" />
 <meta name="prof" content="" />
-<link href="micss/default.css" rel="stylesheet" type="text/css" media="screen" />
-<link rel="stylesheet" href="micss/style (2).css">
+<link href="../micss/default.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="../micss/style (2).css">
 
 <script>
 		function poner(){
@@ -16,15 +16,22 @@
 </script>
 </head>
 <body>
+	<?php
+	session_start();//reanudamos una session si es que la hay
+	if(!isset($_SESSION["usuario"])){
+		//redirigimos si no existe la session
+		header("location:login_profesor.php");
+	}
+	 ?>
 <div id="header">
 	<div id="logo">
 		<h1>Profesores</h1>
 	</div>
 	<div id="menu-bg">
 		<div id="menu">
-			<li><a href="index.html"><h3>Inicio</h3></a></li>
+			<li><a href="sector_profesor.php"><h3>Inicio</h3></a></li>
 			<li><a href="#"><h3>Nuevo</h3></a></li>
-			<li><a href="#"><h3>Subir Archivos</h3></a></li>
+			<li><a href="sube_archivos_profesor.php"><h3>Subir Archivos</h3></a></li>
 			<li><a href="#"><h3>Nuevo</h3></a></li>
 		</div>
 	</div>
@@ -98,6 +105,6 @@
 
 		</div>
 	</div>
-	<div id="sidebar"> <img src="images/colegios.jpg"><img src="img/img_437552.jpg"></div>
+	<div id="sidebar"> <img src="../img/colegios.jpg"><img src="../img/img_437552.jpg"></div>
 </div>
 </html>

@@ -5,19 +5,23 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="registra_nuevo_usuario.php" method="post">
+    <form class="" action="registra_padre_db.php" method="post">
+    <fieldset>
+      <legend>Su login</legend>
+      <ul>
+      <li>
+        <label>Elija un nombre de usuario</label>
+        <input name="usuario" type=text placeholder="nombre de usuario" required autofocus>
+      </li>
+      <li>
+      <label >Elija un password</label>
+      <input  name="password" type="password" required>
+      </li>
+    </ul>
+    </fieldset>
     <fieldset>
     <legend>Sus Datos personales</legend>
-    <ol>
-      <li>
-        <label>
-            <input type="radio" name="numero" value="profesor">profesor
-        </label>
-        <label>
-            <input type="radio" name="numero" value="padre">padre
-        </label>
-    </ol>
-    <ol>
+    <ul>
     <li>
       <label>Nombres</label>
       <input name="nombres" type=text placeholder="Sus nombres" required autofocus>
@@ -27,14 +31,10 @@
     <input  name="apellidos" type=text placeholder="Sus apellidos" required>
     </li>
     <li>
-    <label>Correo</label>
-    <input name="correo" type=email placeholder="ejemplo@dominio.com" required>
-    </li>
-    <li>
     <label>Telefono o Celular</label>
     <input name="telefono"  placeholder="Ej. 78956486" required>
     </li>
-    </ol>
+  </ul>
     </fieldset>
     <input type="button" name="name" value="Reset">
     <button type="submit" name="button">Registrar</button>

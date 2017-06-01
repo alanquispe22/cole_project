@@ -7,33 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="micss/style.css" rel="stylesheet" >
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../micss/style.css" rel="stylesheet" >
   </head>
   <body>
     <?php
     session_start();//reanudamos una session si es que la hay
     if(!isset($_SESSION["usuario"])){
       //redirigimos si no existe la session
-      header("location:index.php");
+      header("location:login_padre.php");
     }
      ?>
 
      <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div class="carousel slide" id="carousel-341120">
-        <ol class="carousel-indicators">
-          <li data-slide-to="0" data-target="#carousel-341120">
-          </li>
-          <li data-slide-to="1" data-target="#carousel-341120" class="active">
-          </li>
-          <li data-slide-to="2" data-target="#carousel-341120">
-          </li>
-        </ol>
-
-      </div>
       <ul class="nav nav-pills">
         <li>
           <a href="sector_padre.php">Inicio</a>
@@ -236,9 +225,9 @@
   </div>
  </div>
 
-     <script src="js/jquery.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/scripts.js"></script>
+     <script src="../js/jquery.min.js"></script>
+     <script src="../js/bootstrap.min.js"></script>
+     <script src="../js/scripts.js"></script>
 
   </body>
 </html>

@@ -39,30 +39,25 @@ if (isset($_POST['boton'])) {
 <form method="post" action="" enctype="multipart/form-data">
 <h2 align="center" class="Estilo1">SUBIR ARCHIVO</h2>
 <div align="center">
-
   <input type="file" name="archivo" />
   <br/>
     <input type="submit" value="Subir Archivo" name="boton" />
-  <br/>  
-
- 
+  <br/>
 <?php
-if ($dir=opendir($directorio)) 
+if ($dir=opendir($directorio))
 {
-	while ($archivo = readdir($dir)) 
+	while ($archivo = readdir($dir))
 	{
-		if ($archivo!='.' && $archivo!='..') 
+		if ($archivo!='.' && $archivo!='..')
 		{
 			$contArchivos++;
 			echo "Archivo: <strong>$archivo</strong> <br/>";
 		}
 	}
-	echo "total de archivos: <strong>$contArchivos</strong>";	
-	
+	echo "total de archivos: <strong>$contArchivos</strong>";
+
 }
 ?>
-
-
 </div>
 </form>
 </div>

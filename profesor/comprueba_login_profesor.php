@@ -1,11 +1,3 @@
-<?php
-/*
-ESTA PAGINA NO MUESTRA NADA LO UNICO QUE HACE ES VERIFICAR SI LOS DATOS INGRESADOS EN EL LOGIN
-SON VALIDOS, PARA ESTO REVISA EN LA BASE DE DATOS.
-DE NO  SER VALIDO MANDA NUEVAMENTE AL index.php de lo contrario verifica si es padre o profesor
-y dependiendo de eso manda a una pagina.
-*/
- ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,7 +17,7 @@ y dependiendo de eso manda a una pagina.
       //le especificamos el juego de caracteres con acento
       $base->exec("SET CHARACTER SET utf8");
       //Consulta preparada usando marcadores, :login es un marcador
-      $sql="SELECT * FROM USUARIOS_PASS WHERE USUARIOS= :login AND PASSWORD= :password";
+      $sql="SELECT * FROM profesor WHERE USUARIO= :login AND PASSWORD= :password";
 
       //obtenemos el objeto "PDOStatement" en la variable $resultado
       $resultado=$base->prepare($sql);
@@ -57,15 +49,10 @@ y dependiendo de eso manda a una pagina.
       {
         session_start();
         $_SESSION["usuario"]=$_POST["usu"];
-
-        //obtenemos el tipo de usuario: profesor o padre
-        $registro=$resultado->fetch(PDO::FETCH_ASSOC);
-        IF($registro['tipo']=="profesor"){
-          header("location: sector_profesor.php");
-        }else header("location: sector_padre.php");
+        header("location: sector_profesor.php");
       }else{
         //le redirigimos a la propia pagina web
-        header("location:index.php");
+        header("location:login_profesor.php");
       }
     } catch (Exception $e) {//$e es objeto y getMessage() es uno de sus metodos
       die("Error: " . $e->getMessage());

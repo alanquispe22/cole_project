@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2017 a las 03:24:21
+-- Tiempo de generación: 01-06-2017 a las 06:58:01
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -79,18 +79,22 @@ CREATE TABLE `padre` (
   `ID_PADRE` int(10) UNSIGNED NOT NULL,
   `NOMBRES` varchar(20) NOT NULL,
   `APELLIDOS` varchar(20) NOT NULL,
-  `TELEFONO` varchar(15) DEFAULT NULL
+  `TELEFONO` varchar(15) DEFAULT NULL,
+  `USUARIO` varchar(20) NOT NULL,
+  `PASSWORD` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `padre`
 --
 
-INSERT INTO `padre` (`ID_PADRE`, `NOMBRES`, `APELLIDOS`, `TELEFONO`) VALUES
-(1, 'ANTONIO ', 'MAMANI QUISPE', '7896543'),
-(2, 'ALEJANDRO', 'BALTAZAR BAUTISTA', '2224654'),
-(3, 'ARMANDO', 'GALINDO ', '24654654'),
-(4, 'CARLOS', 'FERNANDEZ', NULL);
+INSERT INTO `padre` (`ID_PADRE`, `NOMBRES`, `APELLIDOS`, `TELEFONO`, `USUARIO`, `PASSWORD`) VALUES
+(1, 'ANTONIO ', 'MAMANI QUISPE', '7896543', 'antonio', '456'),
+(2, 'ALEJANDRO', 'BALTAZAR BAUTISTA', '2224654', 'alejandro', '456'),
+(3, 'ARMANDO', 'GALINDO ', '24654654', 'armando', '456'),
+(4, 'CARLOS', 'FERNANDEZ', NULL, 'carlos', '456'),
+(5, 'Alain', 'Mamani', '78685642', 'alan_qp', 'alan_qp'),
+(6, 'alvaro', 'casillas', '7896563', 'alvaro', '789');
 
 -- --------------------------------------------------------
 
@@ -125,18 +129,21 @@ CREATE TABLE `profesor` (
   `ID_PROFESOR` int(10) UNSIGNED NOT NULL,
   `NOMBRES` varchar(20) NOT NULL,
   `APELLIDOS` varchar(20) NOT NULL,
-  `TELEFONO` varchar(15) DEFAULT NULL
+  `TELEFONO` varchar(15) DEFAULT NULL,
+  `USUARIO` varchar(20) NOT NULL,
+  `PASSWORD` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `profesor`
 --
 
-INSERT INTO `profesor` (`ID_PROFESOR`, `NOMBRES`, `APELLIDOS`, `TELEFONO`) VALUES
-(1, 'ALAN NATALIO', 'QUISPE QUISPE', '78958663'),
-(3, 'JUAN', 'MEDINA ORTIZ', '2222368'),
-(4, 'MAURICIO', 'FERNANDEZ ', '76548641'),
-(6, 'MARIA ALEJANDRA', 'REYES MIRANDA', '224565');
+INSERT INTO `profesor` (`ID_PROFESOR`, `NOMBRES`, `APELLIDOS`, `TELEFONO`, `USUARIO`, `PASSWORD`) VALUES
+(1, 'ALAN NATALIO', 'QUISPE QUISPE', '78958663', 'alan', '123'),
+(3, 'JUAN', 'MEDINA ORTIZ', '2222368', 'juan', '123'),
+(4, 'MAURICIO', 'FERNANDEZ ', '76548641', 'mauricio', '123'),
+(6, 'MARIA ALEJANDRA', 'REYES MIRANDA', '224565', 'maria', '123'),
+(7, 'manuel', 'valenzuela', '2224653', 'manu', 'manu');
 
 -- --------------------------------------------------------
 
@@ -213,12 +220,12 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `padre`
 --
 ALTER TABLE `padre`
-  MODIFY `ID_PADRE` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_PADRE` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  MODIFY `ID_PROFESOR` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_PROFESOR` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `usuarios_pass`
 --

@@ -7,32 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
   </head>
   <body>
     <?php
     session_start();//reanudamos una session si es que la hay
     if(!isset($_SESSION["usuario"])){
       //redirigimos si no existe la session
-      header("location:index.php");
+      header("location:login_padre.php");
     }
      ?>
-
-         <div class="container-fluid">
+     <div class="container-fluid">
      	<div class="row">
      		<div class="col-md-12">
-     			<div class="carousel slide" id="carousel-619333">
-     				<ol class="carousel-indicators">
-     					<li data-slide-to="0" data-target="#carousel-619333">
-     					</li>
-     					<li data-slide-to="1" data-target="#carousel-619333">
-     					</li>
-     					<li data-slide-to="2" data-target="#carousel-619333" class="active">
-     					</li>
-     				</ol>
-
-     			</div>
      			<ul class="nav nav-pills">
      				<li class="active">
      					<a href="sector_padre.php">Inicio</a>
@@ -58,7 +46,7 @@
      						<li class="divider">
      						</li>
      						<li>
-     							<a href="www.google.com">Salir</a>
+     							<a href="#">Salir</a>
      						</li>
      					</ul>
      				</li>
@@ -100,8 +88,8 @@
      	</div>
      </div>
 
-         <script src="js/jquery.min.js"></script>
-         <script src="js/bootstrap.min.js"></script>
-         <script src="js/scripts.js"></script>
+         <script src="../js/jquery.min.js"></script>
+         <script src="../js/bootstrap.min.js"></script>
+         <script src="../js/scripts.js"></script>
   </body>
 </html>
