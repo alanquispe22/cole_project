@@ -30,7 +30,7 @@
  					<a href="sector_padre_notas.php">Notas</a>
  				</li>
  				<li>
- 					<a href="sector_padre_comunicados.php">Notas</a>
+ 					<a href="sector_padre_comunicados.php">Comunicados</a>
  				</li>
  				<li class="dropdown pull-right">
  					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Ver mas<strong class="caret"></strong></a>
@@ -55,11 +55,10 @@
  			<div class="row">
  				<div class="col-md-6">
  					<h2>
- 						Comunicados
+ 						Notas
  					</h2>
  					<p>
- 						Por este medio recibira Comunicados que realizara profesor de la unidad educativa
- 						asi tambien tendra acceso a realizar o enviar mensajes al profesor de su hijo.
+ 						En este sector se difunden las notas parciales del alumno
  					</p>
 
  					<div class="comments-container">
