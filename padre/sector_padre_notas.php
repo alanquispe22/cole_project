@@ -56,6 +56,7 @@
  				<div class="col-md-6">
  					<h2>
  						Notas
+            <?php  ?>
  					</h2>
  					<p>
  						En este sector se difunden las notas parciales del alumno

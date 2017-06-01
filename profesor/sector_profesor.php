@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
@@ -39,13 +40,15 @@
 	<div id="page">
 		<div id="content">
 				<p><h1 class="title">Comunicados</h1></p>
-				<form action="" name="Documento">
-				<textarea name="comentarios" rows="4" cols="60" backgroud=#123456></textarea>
-				<p><INPUT type="button" value="Publicar" align="rigth" onClick="poner();">
-				<INPUT type="button" value="Modificar" ></p>
-				<p><h1 class="title">Anteriores</h1></p>
-      			<textarea name="comen" rows="2" cols="60"></textarea>
-      			</form>
+				<form action="publica_comunicado.php" method="post" name="Documento">
+					<textarea name="comunicado" rows="4" cols="60" backgroud=#123456></textarea>
+				<p>
+					<button type="submit" name="borrar">Borrar</button>
+					<button type="submit" name="publicar">Publicar</button>
+				</p>
+					<p><h1 class="title">Anteriores</h1></p>
+	      	<textarea name="comen" rows="2" cols="60"></textarea>
+      	</form>
 				<!-- Contenedor Principal -->
 			    <div class="comments-container">
 			        <ul id="comments-list" class="comments-list">
@@ -83,7 +86,6 @@
 			                    </li>
 			                </ul>
 			            </li>
-
 			            <li>
 			                <div class="comment-main-level">
 			                    <!-- Avatar -->
@@ -102,7 +104,6 @@
 			            </li>
 			        </ul>
 			    </div>
-
 		</div>
 	</div>
 	<div id="sidebar"> <img src="../img/colegios.jpg"><img src="../img/img_437552.jpg"></div>

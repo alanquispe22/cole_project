@@ -6,9 +6,9 @@
   </head>
   <body>
     <?php
-    session_start();
+    session_start();//es importante para reanudar una sesion
     session_destroy();
-    header("location:index.php");
+    header("location:login_profesor.php");
      ?>
   </body>
 </html>

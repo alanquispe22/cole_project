@@ -54,7 +54,7 @@
         //le redirigimos a la propia pagina web
         header("location:login_padre.php");
       }
-    } catch (Exception $e) {//$e es objeto y getMessage() es uno de sus metodos
+    } catch (Exception $e) {
       die("Error: " . $e->getMessage());
     }
      ?>
