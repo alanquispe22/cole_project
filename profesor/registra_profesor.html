@@ -8,41 +8,30 @@
     <form class="" action="registra_profesor_db.php" method="post" enctype="multipart/form-data">
     <fieldset>
       <legend>Su login</legend>
-      <ul>
-      <li>
-        <label>Elija un nombre de usuario</label>
-        <input name="usuario" type=text placeholder="nombre de usuario" required autofocus>
-      </li>
-      <li>
-      <label >Elija un password</label>
-      <input  name="password" type="password" required>
-      </li>
-    </ul>
+        <label>Elija un nombre de usuario</label><br>
+        <input name="usuario" type=text placeholder="nombre de usuario" required autofocus><br>
+      <label >Elija un password</label><br>
+      <input  name="password" type="password" required><br>
+    </fieldset>
+    <fieldset>
+      <legend>Academico</legend>
+      
     </fieldset>
     <fieldset>
     <legend>Sus Datos personales</legend>
-    <ul>
-    <li>
-      <label>Nombres</label>
-      <input name="nombres" type=text placeholder="Sus nombres" required autofocus>
-    </li>
-    <li>
-    <label >Apellidos</label>
-    <input  name="apellidos" type=text placeholder="Sus apellidos" required>
-    </li>
-    <li>
-    <label>Telefono o Celular</label>
-    <input name="telefono"  placeholder="Ej. 78956486" required>
-    </li>
-  </ul>
+      <label>Nombres</label><br>
+      <input name="nombres" type=text placeholder="Sus nombres" required autofocus><br>
+    <label >Apellidos</label><br>
+    <input  name="apellidos" type=text placeholder="Sus apellidos" required><br>
+    <label>Telefono o Celular</label><br>
+    <input name="telefono"  placeholder="78956486" required><br>
     </fieldset>
     <fieldset>
-      <legend>subida de foto</legend> 
+      <legend>subida de foto</legend>
       <input type="file"  name="imagen" />
     </fieldset>
     <input type="button" name="name" value="Reset">
     <button type="submit" name="button">Registrar</button>
-
     </form>
   </body>
 </html>

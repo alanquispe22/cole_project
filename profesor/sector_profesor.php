@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE >
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Pagina de Inicio Profesores</title>
-<meta name="keywords" content="" />
-<meta name="prof" content="" />
 <link href="../micss/default.css" rel="stylesheet" type="text/css" media="screen" />
 <link rel="stylesheet" href="../micss/style (2).css">
 
@@ -23,10 +21,40 @@
 		//redirigimos si no existe la session
 		header("location:login_profesor.php");
 	}
+
+	try{
+		$base=new PDO("mysql:host=localhost; dbname=colegio", "root","");
+		$base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+		$base->exec("SET CHARACTER SET utf8");
+		$sql="SELECT * FROM PROFESOR WHERE USUARIO= :login AND PASSWORD= :password";
+		$resultado=$base->prepare($sql);
+		$usu=$_SESSION["usuario"];
+		$password=$_SESSION["password"];
+		$resultado->execute(array(":login"=>$usu, ":password"=>$password));
+		//obteniendo datos personales del profesor
+		$registro=$resultado->fetch(PDO::FETCH_ASSOC);
+		$nombres=$registro['NOMBRES'];
+		$apellidos=$registro['APELLIDOS'];
+		$usuario=$registro['USUARIO'];
+		$id=$registro['ID_PROFESOR'];
+		//obteniendo comunicados del profesor
+		$sql="SELECT * FROM COMUNICADO WHERE ID_PROFESOR=:id";
+		$resultado=$base->prepare($sql);
+		$resultado->execute(array(":id"=>$id));
+		while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
+			echo $registro['FECHA'] . "<br>";
+			echo $registro['MENSAJE'] . "<br>";
+			echo "<br>";
+		}
+
+		$resultado->closeCursor();
+	} catch (Exception $e) {
+		die("Error: " . $e->getMessage());
+	}
 	 ?>
 <div id="header">
 	<div id="logo">
-		<h1>Profesores</h1>
+		<h1><?php echo $usuario; ?></h1>
 	</div>
 	<div id="menu-bg">
 		<div id="menu">
@@ -40,14 +68,13 @@
 	<div id="page">
 		<div id="content">
 				<p><h1 class="title">Comunicados</h1></p>
+				<!--formulario para q el profesor suba comunicados-->
 				<form action="publica_comunicado.php" method="post" name="Documento">
 					<textarea name="comunicado" rows="4" cols="60" backgroud=#123456></textarea>
 				<p>
 					<button type="submit" name="borrar">Borrar</button>
 					<button type="submit" name="publicar">Publicar</button>
 				</p>
-					<p><h1 class="title">Anteriores</h1></p>
-	      	<textarea name="comen" rows="2" cols="60"></textarea>
       	</form>
 				<!-- Contenedor Principal -->
 			    <div class="comments-container">

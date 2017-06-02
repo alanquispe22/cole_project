@@ -49,6 +49,7 @@
       {
         session_start();
         $_SESSION["usuario"]=$_POST["usu"];
+        $_SESSION["password"]=$_POST["password"];
         header("location: sector_profesor.php");
       }else{
         //le redirigimos a la propia pagina web

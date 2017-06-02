@@ -49,9 +49,9 @@
       {
         session_start();
         $_SESSION["usuario"]=$_POST["usu"];
+        $_SESSION["password"]=$_POST["password"];
         header("location: sector_padre.php");
       }else{
-        //le redirigimos a la propia pagina web
         header("location:login_padre.php");
       }
     } catch (Exception $e) {
