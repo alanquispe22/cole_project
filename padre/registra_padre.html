@@ -8,26 +8,62 @@
     <form class="" action="registra_padre_db.php" method="post">
     <fieldset>
       <legend>Su login</legend>
-        <label>Elija un nombre de usuario</label><br>
-        <input name="usuario" type=text placeholder="nombre de usuario" required autofocus>
-      <label >Elija un password</label><br>
+        <label>Elija un nombre de usuario   </label>
+        <input name="usuario" type=text placeholder="nombre de usuario" required autofocus><br>
+      <label >Elija un password             </label>
       <input  name="password" type="password" required>
     </fieldset>
-    <fieldset>
-      <legend>Academico</legend>
-      <label>Elija un nombre de usuario</label><br>
-      <input name="usuario" type=text placeholder="nombre de usuario" required autofocus>
-    </fieldset>
+    
     <fieldset>
     <legend>Sus Datos personales</legend>
-      <label>Nombres</label><br>
-      <input name="nombres" type=text placeholder="Sus nombres" required autofocus>
-    <label >Apellidos</label><br>
-    <input  name="apellidos" type=text placeholder="Sus apellidos" required>
-    <label>Telefono o Celular</label><br>
+      <label>Nombres</label>
+      <input name="nombres" type=text placeholder="Sus nombres" required autofocus> <br>
+    <label >Apellidos</label>
+    <input  name="apellidos" type=text placeholder="Sus apellidos" required><br>
+    <label>N° de CI</label>
     <input name="telefono"  placeholder="78956486" required>
     </fieldset>
-    <input type="button" name="name" value="Reset">
+    <section>
+            
+            <?php if(isset($_POST['submit'])) { ?>
+            <div class="msg">Foto de Perfil</div>
+            <?php } ?>
+            
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>"
+                  method="POST"
+                  enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Seleccionar una imagen de perfil</legend>
+                    <div><input type="file" name="foto" /></div>
+                    <div style="margin-top: 10px;"><input type="submit" name="submit" />
+                    </div>
+                </fieldset>
+            </form>
+            
+            <div style="margin-top: 25px; font-size: small;">
+                
+                <?php
+                $path = dirname(__FILE__);
+                $directorio=dir($path);
+                echo "Directorio de fotos: <em>".$path.":</em><br />
+                    <span style='color: rgb(150,150,150);'>// Únicamente muestra GIF, JPG y PNG.</span><br /><br />";
+                
+                while ($archivo = $directorio->read()) {
+                    $extension = end(explode('.', $archivo));
+                    if($extension == 'png'
+                            || $extension == 'gif'
+                            || $extension == 'jpg'){
+                        echo "<a href='".$archivo."' target='_blank'>".$archivo."</a> [ <a class='elimina' href='".$_SERVER['PHP_SELF']."?eliminar=".$archivo."'>eliminar</a> ]<br>";
+                    }
+                }
+                $directorio->close();
+                ?>
+            </div>
+            
+        </section>
+        
+        
+    <input type="button" name="name" value="Borrar">
     <button type="submit" name="button">Registrar</button>
     </form>
   </body>
