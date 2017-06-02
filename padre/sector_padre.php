@@ -33,7 +33,7 @@
      					<a href="sector_padre_comunicados.php">Comunicados</a>
      				</li>
      				<li class="dropdown pull-right">
-     					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">julio cesar<strong class="caret"></strong></a>
+     					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">julio Cesar<strong class="caret"></strong></a>
      					<ul class="dropdown-menu">
      						<li>
      							<a href="#">Perfil</a>
