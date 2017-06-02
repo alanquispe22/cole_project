@@ -28,7 +28,7 @@
           <a href="sector_padre.php">Inicio</a>
         </li>
         <li >
-          <a href="sector_padre_notas.php">Notas</a>
+          <a href="sector_padre_notas.php">Ver Notas</a>
         </li>
         <li class="active">
           <a href="sector_padre_comunicados.php">Comunicados</a>
@@ -37,19 +37,17 @@
            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Ver mas<strong class="caret"></strong></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="index.html">Inicio</a>
+              <a href="index.html">Perfil</a>
             </li>
             <li>
-              <a href="#">Mensajes</a>
+              <a href="#">Mensaje</a>
             </li>
             <li>
-              <a href="#">Archivos descargados</a>
+              <a href="#">Cerrar Sesion</a>
             </li>
             <li class="divider">
             </li>
-            <li>
-              <a href="www.google.com">Salir</a>
-            </li>
+           
           </ul>
         </li>
       </ul>
