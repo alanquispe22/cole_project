@@ -27,14 +27,23 @@ if (isset($_POST['boton'])) {
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Documento sin t&iacute;tulo</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
+  <?php
+  include("claseComunicado.php");
+  include("claseMateria.php");
+  include("clase_usuario_profesor.php");
+  session_start();//reanudamos una session si es que la hay
+  if(!isset($_SESSION["profesor"])){
+    //redirigimos si no existe la session
+    header("location:../index.php");
+  }?>
+  <?php
+  require("nav_profesor.php");
+   ?>
 <div class="caja">
 <form method="post" action="" enctype="multipart/form-data">
 <h2 align="center" class="Estilo1">SUBIR ARCHIVO</h2>
@@ -61,5 +70,7 @@ if ($dir=opendir($directorio))
 </div>
 </form>
 </div>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

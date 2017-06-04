@@ -12,13 +12,14 @@
   </head>
   <body>
     <?php
+    include("clase_usuario_padre.php");
     session_start();//reanudamos una session si es que la hay
-    if(!isset($_SESSION["usuario"])){
+    if(!isset($_SESSION["padre"])){
       //redirigimos si no existe la session
-      header("location:login_padre.php");
+      header("location:../login_padre.php");
     }
+    	require("nav_padre.php");
      ?>
-
      <div class="container-fluid">
      	<div class="row">
      		<div class="col-md-12">
@@ -33,7 +34,7 @@
      					<a href="sector_padre_comunicados.php">Comunicados</a>
      				</li>
      				<li class="dropdown pull-right">
-     					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Ver mas<strong class="caret"></strong></a>
+     					 <a href="../cierre.php" data-toggle="dropdown" class="dropdown-toggle">Salir<strong class="caret"></strong></a>
      					<ul class="dropdown-menu">
      						<li>
      							<a href="#">Inicio</a>
@@ -89,8 +90,7 @@
      	</div>
      </div>
 
-         <script src="../js/jquery.min.js"></script>
-         <script src="../js/bootstrap.min.js"></script>
-         <script src="../js/scripts.js"></script>
+     <script src="../js/jquery.js"></script>
+ 	 	<script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
