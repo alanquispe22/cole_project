@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link href="../micss/dashboard.css" rel="stylesheet">
+<link rel="stylesheet" href="../micss/estilo_principal.css">
 </head>
 <body>
 	<?php
@@ -40,7 +41,29 @@
 				</ul>
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
+				<!-- First Featurette -->
+				<div class="featurette" id="about">
+						<div class="container content">
+								<div class="row">
+										<div class="col-md-6 col-md-offset-3">
+												<div class="testimonials">
+														<div class="active item">
+																<blockquote>
+																		<p>Mohtashim is an MCA from AMU (Aligarah) and a Project Management Professional. He has more than 17 years of experience in Telecom and Datacom industries covering complete SDLC. He is managing in-house innovations, business planning, implementation, finance and the overall business development of Tutorials Point.</p>
+																</blockquote>
+																<div class="carousel-info">
+																		<img alt="" src="#" class="pull-left">
+																		<div class="pull-left">
+																				<span class="testimonials-name">Mohtashim M.</span>
+																				<span class="testimonials-post">Founder & Managing Director</span>
+																		</div>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
 			</div>
 		</div>
 	</div>

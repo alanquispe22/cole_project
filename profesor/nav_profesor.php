@@ -3,11 +3,8 @@
     <script type="text/javascript">
     function elijeMateria(elemento){
         //cambiamos el valor de la etiqueta con id meteriaElejida
-        document.getElementById("materiaElejida").innerHTML = elemento.innerHTML;
-        document.getElementById("materia").value=elemento.innerHTML;
-
-        //Obtenemos toda la informacion necesaria para la materia solicitada con AJAX
-
+        document.getElementById("materia").innerHTML = elemento.innerHTML+"<span class='caret'></span>";
+        //document.getElementById("materia").value=elemento.innerHTML;
     }
     </script>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,7 +25,7 @@
                 <li><a href="#">Organización</a></li>
                 <li><a href="#">Quines somos</a></li>
                 <li class="dropdown">
-                  <a href="#" id="materiaElejida" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo "Materia"; ?><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><ji id="materia"> <?php echo $_SESSION['materias'][0]->getMateria(); ?><ji><span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <?php $contador=sizeof($_SESSION['materias']); for ($i=0; $i <$contador ; $i++) {?>
                     <li><a href="#" onclick="elijeMateria(this)"><?php echo $_SESSION['materias'][$i]->getMateria(); ?></a></li>
