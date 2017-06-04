@@ -6,7 +6,8 @@
         document.getElementById("materiaElejida").innerHTML = elemento.innerHTML;
         document.getElementById("materia").value=elemento.innerHTML;
 
-        //Obtenemos toda la informacion necesaria para la materia solicitada
+        //Obtenemos toda la informacion necesaria para la materia solicitada con AJAX
+
     }
     </script>
         <nav class="navbar navbar-inverse navbar-fixed-top">

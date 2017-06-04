@@ -28,28 +28,31 @@
      					<a href="sector_padre.php">Inicio</a>
      				</li>
      				<li >
-     					<a href="sector_padre_notas.php">Notas</a>
+     					<a href="sector_padre_notas.php">Ver Notas</a>
      				</li>
      				<li >
      					<a href="sector_padre_comunicados.php">Comunicados</a>
      				</li>
      				<li class="dropdown pull-right">
      					 <a href="../cierre.php" data-toggle="dropdown" class="dropdown-toggle">Salir<strong class="caret"></strong></a>
+     					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">julio Cesar<strong class="caret"></strong></a>
      					<ul class="dropdown-menu">
      						<li>
-     							<a href="#">Inicio</a>
+     							<a href="#">Perfil</a>
+
      						</li>
      						<li>
      							<a href="#">Mensajes</a>
      						</li>
      						<li>
-     							<a href="#">Archivos descargados</a>
+     							<a href="#">Cerrar Sesion</a>
      						</li>
      						<li class="divider">
      						</li>
      						<li>
      							<a href="#">Salir</a>
      						</li>
+
      					</ul>
      				</li>
      			</ul>
