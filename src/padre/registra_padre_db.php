@@ -1,0 +1,68 @@
+<?php
+include("../variables.php");
+$usuario=$_POST["usuario"];
+$password=$_POST["password"];
+$nombres=$_POST["nombres"];
+$apellidos=$_POST["apellidos"];
+$telefono=$_POST["telefono"];
+$grado=$_POST["grado"];
+$correo=$_POST["correo"];
+$ci=$_POST["ci"];
+
+if($grado!=1 && $grado!=2 && $grado!=3 && $grado!=4 && $grado!=5 && $grado!=6){
+  echo "Grado no valido";
+  exit();
+}
+// Comprobamos si ha ocurrido un error con la imagen
+if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
+    echo "Ha ocurrido un error con la imagen";
+    exit();
+}
+$permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
+$limite_kb = 16384;
+if (!in_array($_FILES['imagen']['type'], $permitidos) || !($_FILES['imagen']['size'] <= $limite_kb*1024)){
+  echo "El archivo no es de un tipo permitido o es demasiado grande";
+  exit();
+}
+
+try{
+  $base=new PDO("mysql:host=".Variables::$db_host. ";dbname=".Variables::$db_nombre, Variables::$db_usuario,Variables::$db_password);
+  $base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+  $base->exec(Variables::$juego_caracteres);
+
+  //AVERIGUAMOS SI EL USUARIO NO EXISTE
+  $sql="SELECT `USUARIO` FROM `usuario` WHERE `USUARIO`=:usu";
+  $resultado=$base->prepare($sql);
+  $resultado->execute(array(":usu"=>$usuario));
+  $numero_registro=$resultado->rowCount();
+
+  if($numero_registro!=0)//si el usuario existe
+  {
+      $mensaje="El usuario ya existe ingrese otro usuario!!";
+      header("location: registra_padre.php?mensaje=$mensaje");
+      exit();
+  }
+  //INSERTAMOS NUEVO PADRE EN LA TABLA USUARIO
+  $sql="INSERT INTO `usuario`(`USUARIO`, `PASSWORD`, `TIPO`) VALUES (:usu,:pass,:tipo)";
+  $resultado=$base->prepare($sql);
+  $resultado->execute(array(":usu"=>$usuario,":pass"=>$password,":tipo"=>"padre"));
+
+  //INSERTAMOS NUEVO PADRE EN LA TABLA "padre"
+  $sql="INSERT INTO `padre`(`CI_PADRE`,`NOMBRES`, `APELLIDOS`, `TELEFONO`, `CORREO`, `FOTO_PATH`,`ID_GRADO`, `USUARIO`)
+  VALUES (:ci,:nom, :ape, :tel,:correo,:fot,:idg,:usu)";
+  $resultado=$base->prepare($sql);
+  $resultado->execute(array(":ci"=>$ci,":nom"=>$nombres,":ape"=>$apellidos,
+        ":tel"=>$telefono,":correo"=>$correo,":fot"=>$_FILES['imagen']['name'],":idg"=>$grado,":usu"=>$usuario));
+  $resultado->closeCursor();
+  //ALMACENAMOS LA FOTO DE ESTE NUEVO PADRE
+  $carpeta="../foto_perfil/";
+  opendir($carpeta);
+  //ALMACENAMOS UN ARCHIVO EN EL DIRECTORIO FILES
+  $path=$carpeta.$_FILES['imagen']['name'];
+  copy($_FILES['imagen']['tmp_name'],$path);
+  header("location: ../index.php");
+} catch (Exception $e) {
+  echo "linea de error: " . $e->getLine()."<br>";
+  die("Error: " . $e->getMessage());
+}
+ ?>
